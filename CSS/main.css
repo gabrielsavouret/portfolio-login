@@ -1,0 +1,351 @@
+body {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: margin-left 0.3s ease, margin-right 0.3s ease; /* Déplace le contenu quand le menu est ouvert */
+    background-image: url(../images/Background.jpg);
+    background-size: 100%; /* Agrandit l'image (réduit l'effet de zoom) */
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Empêche l'image de se répéter */
+    background-attachment: fixed;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: flex-start; /* Par défaut à droite */
+    align-items: center;
+    padding: 15px 25px;
+    z-index: 2 ;
+}
+
+/* -- Icône Hamburger ---------------------*/
+.menu-icon {
+    cursor: pointer;
+    font-size: 35px;
+    display: block;
+    padding-left: 10px; /* Espacement à gauche */
+    background-color: transparent;
+    z-index: 1;
+}
+
+/* -- Menu Latéral -----------------------------------------------------------------*/
+.side-nav {
+    position: fixed;
+    top: 3.5rem;
+    left: -290px; /* Cache le menu à droite par défaut */
+    width: 200px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.387); /* Couleur de fond semi-transparente */
+    backdrop-filter: blur(20px); /* Applique le flou à l'arrière-plan */
+    transition: right 0.3s ease, left 0.3s ease; /* Animation pour l'ouverture du menu */
+    padding: 20px;
+    z-index: 3;
+}
+
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-nav ul li {
+    margin: 20px 0;
+}
+
+.side-nav ul li a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.side-nav ul li a:hover {
+    color: rgba(0, 64, 253, 0.993);
+}
+
+/* -- Lorsque le menu est ouvert ----------------------*/
+.side-nav.open {
+    left: 0; /* Ouvre le menu en position droite */
+}
+/*------------------------------------------------------------------------------------------*/
+/* profil */
+form {
+    position: fixed; /* Utilisation du positionnement fixe pour garantir qu'il reste visible */
+    top: 10px; /* Décalage en haut */
+    right: 20px; /* Décalage à droite */
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    color: white; /* Texte en blanc */
+    padding: 15px 20px; /* Espacement interne */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Ombre subtile */
+    z-index: 1; /* Priorité d'affichage élevée */
+    font-size: 0.9em; /* Taille de texte légèrement réduite */
+    display: flex; /* Alignement du contenu interne */
+    align-items: center; /* Centrage vertical des éléments */
+    gap: 10px; /* Espacement entre le texte et le bouton */
+    transition: opacity 0.3s ease-in-out; /* Animation d'apparition/disparition */
+}
+
+form p {
+    margin: 0; /* Supprime les marges inutiles */
+}
+
+form button {
+    background-color: #007BFF; /* Couleur cohérente avec le thème */
+    color: white; /* Texte en blanc */
+    border: none; /* Supprime la bordure par défaut */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 8px 12px; /* Espacement interne du bouton */
+    cursor: pointer; /* Affiche le pointeur */
+    font-size: 0.9em; /* Taille cohérente */
+    transition: background-color 0.3s ease; /* Animation fluide */
+}
+
+form button:hover {
+    background-color: #0056b3; /* Couleur plus sombre au survol */
+}
+
+
+/*--PRESENTATION----------------------------------------------------------------------------*/
+.presentation {
+    display:block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 100px; /* Espacement entre le titre et l'image */
+    padding: 50px 20px; /* Espacement intérieur de la section */
+    background-color: rgba(255, 255, 255, 0); /* Couleur de fond semi-transparente */
+    backdrop-filter: blur(1px); /* Applique le flou à l'arrière-plan */
+    border-radius: 0px; /* Arrondi des bords de la section */
+    margin: 100px auto 0; /* Décale la section vers le bas */
+    text-align: center; /* Centrer le texte dans la section */
+    max-width: 1200px; /* Limite la largeur de la section */
+    z-index: 5;
+}
+
+.titre {
+    font-size: 40px;
+    color: white;
+    margin: 10 px;
+}
+
+.Alex {
+    max-width: 100%;
+    height: auto;
+    border-radius: 200px; /* Arrondi des bords de l'image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre autour de l'image */
+}
+
+.cv {
+    color: white;
+}
+
+.cv h2{
+    font-size: 40px ;
+}
+
+.cv h3{
+    font-size: 25px;
+}
+.competences {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Crée une grille responsive avec des colonnes */
+    gap: 50px; /* Espacement entre les éléments */
+}
+
+/* Style des groupes de compétences */
+.competence-group {
+    background-color: rgba(44, 44, 44, 0.604); /* Couleur de fond semi-transparente */
+    backdrop-filter: blur(20px); /* Applique le flou à l'arrière-plan */
+    padding: 10px;
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(188, 227, 255, 0.85); /* Ombre légère */
+}
+
+/* Style des titres de chaque groupe */
+.competence-group h4 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: rgb(0, 82, 215);
+}
+
+/* Style des listes */
+.competence-group ul {
+    list-style-type: none;;
+    padding: 0;
+    margin: 0;
+}
+
+.competence-group ul li {
+    font-size: 16px;
+    margin: 20px 0;
+    color: white;
+    text-align: left;
+}
+
+ul li::marker {
+    color: rgb(0, 149, 255) /* couleur des puces */
+}
+/*--FIN--PRESENTATION--------------------------------------------------------------------------*/
+/*--PROJETS PRESENTATION-----------------------------------------------------------------------*/
+
+.titre-posts {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Crée une grille responsive avec des colonnes */
+    gap: 80px; /* Espacement entre les éléments */
+    text-align: center;
+    text-decoration: none;
+}
+
+article {
+    background-color: rgba(0, 0, 0, 0.155); /* Couleur de fond semi-transparente */
+    backdrop-filter: blur(20px); /* Applique le flou à l'arrière-plan */
+    padding: 10px;
+    border-radius: 1px; /* Coins arrondis */
+}
+
+article:hover{
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(188, 227, 255, 0.85); /* Ombre légère */
+}
+
+article ul li{
+    list-style: none;
+}
+
+  /* Titre des articles */
+.posts article h2 {
+    font-size: 25px;
+    margin: 15px 0;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+}
+
+.posts article h2 a{
+    color: white;
+    text-decoration: none;
+}
+
+/* Texte descriptif */
+.posts article p {
+    font-size: 15px;
+    color: white;
+    padding: 0 50px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Images des articles */
+.posts .image.fit img {
+    width: 80%; /* L'image s'adapte à la largeur de son conteneur */
+    height: auto; /* Respecte le ratio d'aspect */
+    border-radius: 8px 8px 8px 8px; /* Arrondi seulement les coins supérieurs */
+}
+
+.button {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px 20px; /* Espace interne */
+    color: white; /* Couleur du texte */
+    background-color: rgba(0, 64, 255, 0.376);
+    border-radius: 20px ;
+    text-align: center;
+    text-decoration: none; /* Supprime le soulignement */
+    font-size: 16px; /* Taille du texte */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation fluide */
+    list-style: none;
+}
+
+  /* footer contact */
+  footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 50px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* S'assure que le contenu s'adapte en responsive */
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .contact,
+  .social {
+    text-align: left;
+  }
+  
+  .contact h3,
+  .social h3 {
+    color: rgb(0, 149, 255); /* Couleur du titre */
+    margin-bottom: 10px;
+  }
+  
+  footer a {
+    color: rgba(0, 149, 255, 0.8); /* Couleur des liens */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: rgba(0, 149, 255, 1); /* Changement de couleur au survol */
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7); /* Couleur légèrement atténuée */
+  }
+
+
+/* -- MODE RESPONSIVE -----------------------------------------------------------*/
+@media (max-width: 768px) {
+    body {
+        background-repeat: repeat;
+    }
+    header {
+        justify-content: flex-start; /* L'icône est alignée à gauche */
+    }
+    .side-nav {
+      left: -250px; /* Cache le menu à gauche en mode mobile */
+      right: auto; /* Désactive la position à droite */
+    }
+    .side-nav.open {
+      left: 0; /* Ouvre le menu à gauche */
+      right: auto; /* Assure que le menu s'ouvre à gauche */
+    }
+    .competences {
+      grid-template-columns: 1fr; /* Affiche une seule colonne */
+    }
+    .articles {
+      grid-template-columns: 1fr; /* Affiche une seule colonne */
+    }
+    .button {
+        width: 80%; /* Le bouton prend toute la largeur */
+        text-align: center;
+        font-size: 10px; /* Réduit la taille du texte */
+    }
+}
+
+
+
+

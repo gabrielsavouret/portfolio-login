@@ -1,0 +1,146 @@
+/* Fichier CSS pour la page du formulaire sans la navigation */
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: margin-left 0.3s ease, margin-right 0.3s ease;
+    background-image: url(../images/Background.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparente */
+    backdrop-filter: blur(10px); /* Applique un léger flou d'arrière-plan */
+    border-radius: 10px;
+    margin: 100px auto;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    font-size: 18px;
+    color: #333;
+}
+
+form input {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: border 0.3s ease;
+}
+
+form input:focus {
+    border: 1px solid #007eff;
+    outline: none;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(0, 64, 255, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: rgba(0, 64, 253, 1);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    body {
+        background-repeat: repeat;
+    }
+
+    form {
+        width: 50%; /* Formulaire plus large sur mobile */
+    }
+
+    form input, form button {
+        font-size: 14px; /* Taille de police plus petite */
+    }
+}
+
+#breach-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.95); /* Fond clair */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    text-align: center; /* Centrage du texte */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne */
+    color: #333; /* Couleur du texte */
+}
+
+.breach img {
+    max-width: 100px;
+    border-radius: 5px; /* Coins légèrement arrondis pour les images */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre pour les images */
+    margin-bottom: 10px; /* Espacement avec le titre */
+}
+
+.breach strong {
+    font-size: 1.5em; /* Taille importante pour le titre */
+    color: #007eff; /* Couleur bleu vif */
+    margin-bottom: 10px; /* Espacement avec la description */
+}
+
+.breach p {
+    font-size: 1em;
+    color: #555; /* Texte légèrement gris */
+    margin-bottom: 10px; /* Espacement entre les paragraphes */
+    line-height: 1.5; /* Meilleure lisibilité */
+}
+
+.breach p strong {
+    color: #000; /* Texte important en noir */
+}
+
+#breach-info .breach {
+    border-top: 1px solid #ddd; /* Ligne de séparation entre différentes sections */
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+#breach-info .breach:first-child {
+    border-top: none; /* Pas de ligne pour la première section */
+}
+
+.breach a {
+    color: #007eff; /* Liens en bleu */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.breach a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Bleu plus foncé au survol */
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
