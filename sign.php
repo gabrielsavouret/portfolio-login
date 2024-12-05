@@ -13,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!empty($prenom) && !empty($nom) && !empty($login) && !empty($raw_password)) {
 
-        $hashed_password = password_hash($raw_password, PASSWORD_DEFAULT);
+        $hashed_password = shell_exec("python3 script.py " . escapeshellarg($raw_password));
+        $hashed_password = trim($hashed_password); // Supprimer les espaces et nouvelles lignes
 
         $sql = "INSERT INTO Users (Prenom, Nom, Login, Password) VALUES (:prenom, :nom, :login, :password)";
         $stmt = $pdo->prepare($sql);
@@ -56,5 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit">Créer un compte</button>
         <a href="index.php" class="button">Se connecter</a>
     </form>
+
+    <div class="api">
+
 </body>
 </html>

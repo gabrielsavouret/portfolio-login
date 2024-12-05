@@ -19,13 +19,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && password_verify($raw_password, $user['Password'])) {
-            // Connexion réussie, démarrer la session et rediriger
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['prenom'] = $user['Prenom'];
-            $_SESSION['nom'] = $user['Nom'];
-            header('Location: home.php'); // Page d'accueil ou tableau de bord après connexion
-            exit;
+        if ($user) {
+            // Appeler le script Python pour hasher le mot de passe brut
+            $hashed_password = shell_exec("python3 script.py " . escapeshellarg($raw_password));
+            $hashed_password = trim($hashed_password); // Nettoyer la sortie du script
+
+            if ($hashed_password === $user['Password']) {
+                // Connexion réussie, démarrer la session et rediriger
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['prenom'] = $user['Prenom'];
+                $_SESSION['nom'] = $user['Nom'];
+                header('Location: home.php'); // Page d'accueil ou tableau de bord après connexion
+                exit;
+            } else {
+                echo "<p style='color: red;'>Identifiants incorrects.</p>";
+            }
         } else {
             echo "<p style='color: red;'>Identifiants incorrects.</p>";
         }
@@ -33,10 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<p style='color: red;'>Tous les champs sont obligatoires.</p>";
     }
 }
-
-
-
 ?>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
