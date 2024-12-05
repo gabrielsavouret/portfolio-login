@@ -56,8 +56,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit">Créer un compte</button>
         <a href="index.php" class="button">Se connecter</a>
     </form>
-
-    <div class="api">
-
 </body>
 </html>
