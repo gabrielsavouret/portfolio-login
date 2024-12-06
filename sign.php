@@ -27,6 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ':password' => $hashed_password
             ]);
             echo "<p style='color: green;'>Utilisateur ajouté avec succès !</p>";
+            header('Location: index.php');
+            exit;
         } catch (PDOException $e) {
             echo "<p style='color: red;'>Erreur lors de l'insertion : " . $e->getMessage() . "</p>";
         }
